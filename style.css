@@ -21,7 +21,6 @@ body {
     flex-direction: column;
     background-color: white;
     height: auto;
-    align-items: center;
     width: 90%;
     border: 2px lightgray solid;
     border-radius: 10px;
@@ -40,4 +39,13 @@ h3 {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     text-align: center;
+}
+
+img {
+    align-self: center;
+}
+
+a {
+    text-align: right;
+    margin-right: 5px;
 }
