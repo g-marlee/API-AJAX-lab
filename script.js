@@ -4,9 +4,17 @@ const redditPromise = fetch("https://www.reddit.com/r/aww/.json").then((res) => 
     document.body.appendChild(postContainer);
     postContainer.classList.add("post-container");
 
-    console.log(data.data.children);
+    const subredditTitle = document.createElement("h2");
+
+    console.log(data);
+    let postCount = 0;
 
     data.data.children.forEach(post => {
+        if (postCount === 0) {
+            subredditTitle.innerText = `/r/${post.data.subreddit}`;
+            postContainer.appendChild(subredditTitle);
+        }
+
         const redditPost = document.createElement("div");
         redditPost.classList.add("post");
 
@@ -24,5 +32,6 @@ const redditPromise = fetch("https://www.reddit.com/r/aww/.json").then((res) => 
         redditPost.appendChild(link);
 
         postContainer.appendChild(redditPost);
+        postCount++;
     });
 })
