@@ -19,7 +19,7 @@ const redditPromise = fetch("https://www.reddit.com/r/aww/.json").then((res) => 
         redditPost.appendChild(image);
 
         const link = document.createElement("a");
-        link.href = post.data.permalink;
+        link.href = `https://reddit.com/${post.data.permalink}`;
         link.innerText = "link";
         redditPost.appendChild(link);
 
