@@ -1,3 +1,6 @@
+const goButton = document.getElementById("go-button");
+const userInput = document.getElementById("text-box");
+
 const redditPromise = fetch("https://www.reddit.com/r/aww/.json").then((res) => res.json())
 .then((data) => {
     const postContainer = document.createElement("div");
